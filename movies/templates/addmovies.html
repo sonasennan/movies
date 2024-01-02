@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>You can add movies here</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+
+         <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Cover image:</label>
+  <input type="file" class="form-control" id="exampleFormControlInput1" name="i">
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Title:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter title" name="t">
+</div><br><br>
+
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Description:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter description" name="d">
+</div><br><br>
+
+
+
+
+     <div class="mb-3">
+         <input type="submit" class="form-control">
+     </div>
+
+</form>
+
+{% endblock %}

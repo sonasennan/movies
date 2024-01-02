@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--<h1>Latest movie update:</h1>-->
+<br><br>
+<div class="container-fluid">
+    <div class="row">
+        {% for i in movie %}
+        <div class="col-sm-3" style="height:500px;">
+            <div class="card" style="width: 18rem;height:500px;">
+
+  <img src="{{i.image.url}}" class="card-img-top" alt="..." style="width:286px;height:280px;">
+  <div class="card-body">
+    <h5 class="card-title text-danger">{{i.title}}</h5>
+    <p class="card-text text-primary">{{i.description}}</p>
+    <a href="{% url 'view' i.id %}" class="btn btn-primary">View</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

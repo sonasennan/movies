@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<table class="table table-bordered">
+
+    <tr><th>COVER</th><td><img src="{{b.image.url}}"></td></tr>
+    <tr><th>TITLE</th><td>{{b.title}}</td></tr>
+    <tr><th>DESCRIPTION</th><td>{{b.description}}</td></tr>
+
+    <td><a class="btn btn-warning" href="{% url 'editmovie' b.id %}">UPDATE</a></td>
+    <td><a class="btn btn-warning" href="{% url 'deletemovie' b.id %}">DELETE</a></td>
+
+
+</table>
+    </center>
+{% endblock %}
